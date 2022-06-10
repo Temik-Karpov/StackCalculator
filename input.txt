@@ -1,0 +1,3 @@
+# hello
+PUSH 2
+PRINT
