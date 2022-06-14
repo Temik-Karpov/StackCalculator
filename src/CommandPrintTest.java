@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class CommandPrintTest {
         stack.add(2.0);
         stack.add(3.0);
         printCommand.execute(null, stack, null);
+        Assertions.assertEquals(stack.get(stack.size() - 1), 3);
     }
 
     @Test
@@ -23,6 +25,7 @@ public class CommandPrintTest {
         ArrayList<Double> stack = new ArrayList<>();
         stack.add(2.0);
         printCommand.execute(new String[]{"PRINT"}, stack, map);
+        Assertions.assertEquals(stack.get(stack.size() - 1), 2);
     }
 
     @Test
@@ -36,5 +39,6 @@ public class CommandPrintTest {
         Map<String, Double> map = new HashMap<>();
         map.put("a", 4.0);
         printCommand.execute(new String[]{"PRINT"}, stack, map);
+        Assertions.assertEquals(stack.get(stack.size() - 1), 4);
     }
 }

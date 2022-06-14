@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class CommandPlusTest {
         stack.add(2.0);
         stack.add(3.0);
         plusCommand.execute(null, stack, null);
+        Assertions.assertEquals(stack.get(stack.size() - 1), 5);
     }
 
     @Test
@@ -25,6 +27,7 @@ public class CommandPlusTest {
         stack.add(3.0);
         stack.add(4.0);
         plusCommand.execute(new String[]{"+"}, stack, null);
+        Assertions.assertEquals(stack.get(stack.size() - 1), 7);
     }
 
     @Test
@@ -38,5 +41,6 @@ public class CommandPlusTest {
         Map<String, Double> map = new HashMap<>();
         map.put("a", 4.0);
         plusCommand.execute(new String[]{"+"}, stack, map);
+        Assertions.assertEquals(stack.get(stack.size() - 1), 7);
     }
 }

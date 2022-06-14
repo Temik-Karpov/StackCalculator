@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.Stack;
 
-public class Push extends Command {
+public class Push implements Command {
 
     public void execute(String[] str, ArrayList<Double> stack, Map<String, Double> params)
     {

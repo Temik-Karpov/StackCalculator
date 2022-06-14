@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class CommandMultiplicationTest {
         stack.add(2.0);
         stack.add(3.0);
         multiplicationCommand.execute(null, stack, null);
+        Assertions.assertEquals(stack.get(stack.size() - 1), 6);
     }
 
     @Test
@@ -24,6 +26,7 @@ public class CommandMultiplicationTest {
         stack.add(3.0);
         stack.add(4.0);
         multiplicationCommand.execute(new String[]{"*"}, stack, null);
+        Assertions.assertEquals(stack.get(stack.size() - 1), 12);
     }
 
     @Test
@@ -37,5 +40,6 @@ public class CommandMultiplicationTest {
         Map<String, Double> map = new HashMap<>();
         map.put("a", 4.0);
         multiplicationCommand.execute(new String[]{"*"}, stack, map);
+        Assertions.assertEquals(stack.get(stack.size() - 1), 12);
     }
 }

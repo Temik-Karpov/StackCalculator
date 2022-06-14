@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.Stack;
 
-public class Define extends Command {
+public class Define implements Command {
     @Override
     public void execute(String[] str, ArrayList<Double> stack, Map<String, Double> params) {
         int keyWordIndex = 1;

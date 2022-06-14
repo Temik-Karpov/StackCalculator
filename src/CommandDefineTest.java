@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class CommandDefineTest {
         stack.add(3.0);
         Map<String, Double> map = new HashMap<>();
         defineCommand.execute(new String[]{"DEFINE", "a", "4"}, stack, map);
+        Assertions.assertEquals(map.get("a"), 4);
     }
 
     @Test
@@ -22,6 +24,7 @@ public class CommandDefineTest {
         Define defineCommand = new Define();
         Map<String, Double> map = new HashMap<>();
         defineCommand.execute(new String[]{"DEFINE", "a", "4"}, null, map);
+        Assertions.assertEquals(map.get("a"), 4);
     }
 
     @Test
@@ -35,5 +38,6 @@ public class CommandDefineTest {
         Map<String, Double> map = new HashMap<>();
         map.put("a", 4.0);
         defineCommand.execute(new String[]{"DEFINE", "b", "5"}, stack, map);
+        Assertions.assertEquals(map.get("a"), 4);
     }
 }

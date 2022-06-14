@@ -1,5 +1,3 @@
-import org.junit.jupiter.api.Test;
-
 import java.io.*;
 import java.util.*;
 
@@ -74,10 +72,5 @@ public class StackCalc {
         {
             e.printStackTrace();
         }
-    }
-
-    public void addToStack_(double number)
-    {
-        this.stack_.add(number);
     }
 }

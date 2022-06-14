@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class CommandPushTest {
         stack.add(2.0);
         stack.add(3.0);
         pushCommand.execute(new String[]{"PUSH", "4"}, stack, null);
+        Assertions.assertEquals(stack.get(stack.size() - 1), 4);
     }
 
     @Test
@@ -23,6 +25,7 @@ public class CommandPushTest {
         ArrayList<Double> stack = new ArrayList<>();
         stack.add(2.0);
         pushCommand.execute(new String[]{"PUSH", "4"}, stack, map);
+        Assertions.assertEquals(stack.get(stack.size() - 1), 4);
     }
 
     @Test
@@ -36,5 +39,6 @@ public class CommandPushTest {
         Map<String, Double> map = new HashMap<>();
         map.put("a", 4.0);
         pushCommand.execute(new String[]{"PUSH", "a"}, stack, map);
+        Assertions.assertEquals(stack.get(stack.size() - 1), 4);
     }
 }
