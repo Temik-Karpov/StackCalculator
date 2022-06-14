@@ -1,43 +1,54 @@
+import org.junit.jupiter.api.Test;
+
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 public class StackCalc {
-    private Stack<Double> stack_ = new Stack<>();
-    private Map<String, Double> params_ = new HashMap<>();
+    private final ArrayList<Double> stack_ = new ArrayList<>();
+    private final Map<String, Double> params_ = new HashMap<>();
 
-    public StackCalc(String fileName)
-    {
-        try
-        {
-        File file = new File(fileName);
-        FileReader fr = new FileReader(file);
-        BufferedReader reader = new BufferedReader(fr);
+    public void fileParser(FileReader fileReader) throws IOException {
+        BufferedReader reader = new BufferedReader(fileReader);
         String line = reader.readLine();
         while (line != null) {
             System.out.println(line);
             executeCommand(line);
             line = reader.readLine();
         }
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
     }
 
-    public StackCalc()
+    public void start(String fileName)
+    {
+        if(fileName.length() != 0)
+        {
+            readFile(fileName);
+        }
+        else
+        {
+            consoleInput();
+        }
+    }
+
+    public void consoleInput()
     {
         Scanner scan = new Scanner(System.in);
-        while(true)
-        {
-            String str = scan.nextLine();
-            executeCommand(str);
-        }
-
+        String str = scan.nextLine();
+        executeCommand(str);
     }
 
-    private void executeCommand(String str)
+    public void readFile(String fileName)
+    {
+        try
+        {
+            File file = new File(fileName);
+            FileReader fileReader = new FileReader(file);
+            fileParser(fileReader);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void executeCommand(String str)
     {
         Command command = null;
         String[] words = str.split(" ");
@@ -63,5 +74,10 @@ public class StackCalc {
         {
             e.printStackTrace();
         }
+    }
+
+    public void addToStack_(double number)
+    {
+        this.stack_.add(number);
     }
 }

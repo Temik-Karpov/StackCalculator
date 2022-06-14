@@ -1,16 +1,18 @@
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Stack;
 
 public class Push extends Command {
 
-    public void execute(String[] str, Stack<Double> stack, Map<String, Double> params)
+    public void execute(String[] str, ArrayList<Double> stack, Map<String, Double> params)
     {
-        if(isNumeric(str[1]))
+        int valueWordIndex = 1;
+        if(isNumeric(str[valueWordIndex]))
         {
-            stack.push(Double.parseDouble(str[1]));
+            stack.add(Double.parseDouble(str[valueWordIndex]));
         }
         else {
-            stack.push(params.get(str[1]));
+            stack.add(params.get(str[valueWordIndex]));
         }
     }
 

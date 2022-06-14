@@ -1,10 +1,11 @@
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Stack;
 
 public class Pop extends Command{
-    public void execute(String[] str, Stack<Double> stack, Map<String, Double> params)
+    public void execute(String[] str, ArrayList<Double> stack, Map<String, Double> params)
     {
-        assert stack.empty();
-        stack.pop();
+        assert !stack.isEmpty();
+        stack.remove(stack.size() - 1);
     }
 }
