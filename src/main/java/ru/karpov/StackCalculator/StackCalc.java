@@ -1,15 +1,24 @@
+package ru.karpov.StackCalculator;
+
+import ru.karpov.StackCalculator.ArithmeticOperations.*;
+import ru.karpov.StackCalculator.StackChangeOperations.Define;
+import ru.karpov.StackCalculator.StackChangeOperations.Pop;
+import ru.karpov.StackCalculator.StackChangeOperations.Push;
+import ru.karpov.StackCalculator.StackExtraOperations.Comment;
+import ru.karpov.StackCalculator.StackExtraOperations.Print;
+
 import java.io.*;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class StackCalc {
+public final class StackCalc {
     static final Logger log = Logger.getGlobal();
-    private final ArrayList<Double> stack_ = new ArrayList<>();
+    private final Stack stack_ = new Stack();
     private final Map<String, Double> params_ = new HashMap<>();
 
-    public void fileParser(FileReader fileReader) throws IOException {
-        BufferedReader reader = new BufferedReader(fileReader);
+    public void fileParser(final FileReader fileReader) throws IOException {
+        final BufferedReader reader = new BufferedReader(fileReader);
         String line = reader.readLine();
         while (line != null) {
             System.out.println(line);
@@ -19,7 +28,7 @@ public class StackCalc {
         }
     }
 
-    public void start(String fileName)
+    public void start(final String fileName)
     {
         log.info("Check file name");
         if(fileName.length() != 0)
@@ -36,18 +45,18 @@ public class StackCalc {
 
     public void consoleInput()
     {
-        Scanner scan = new Scanner(System.in);
-        String str = scan.nextLine();
+        final Scanner scan = new Scanner(System.in);
+        final String str = scan.nextLine();
         log.info("The command is accepted. Start parser");
         executeCommand(str);
     }
 
-    public void readFile(String fileName)
+    public void readFile(final String fileName)
     {
         try
         {
-            File file = new File(fileName);
-            FileReader fileReader = new FileReader(file);
+            final File file = new File(fileName);
+            final FileReader fileReader = new FileReader(file);
             fileParser(fileReader);
             log.info("Start file parser");
         } catch (IOException e) {
@@ -59,8 +68,8 @@ public class StackCalc {
     public void executeCommand(String str)
     {
         Command command = null;
-        String[] words = str.split(" ");
-        String comm = words[0];
+        final String[] words = str.split(" ");
+        final String comm = words[0];
         switch (comm) {
             case "DEFINE" -> command = new Define();
             case "PUSH" -> command = new Push();
@@ -82,7 +91,7 @@ public class StackCalc {
         catch (NullPointerException e)
         {
             e.printStackTrace();
-            log.log(Level.WARNING, "Command execute problem", e);
+            log.log(Level.WARNING, "ru.karpov.StackCalculator.Command execute problem", e);
         }
     }
 }

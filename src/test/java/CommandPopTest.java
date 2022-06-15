@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import ru.karpov.StackCalculator.Stack;
+import ru.karpov.StackCalculator.StackChangeOperations.Pop;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,11 +12,11 @@ public class CommandPopTest {
     void nullStringAndMapTest()
     {
         Pop popCommand = new Pop();
-        ArrayList<Double> stack = new ArrayList<>();
-        stack.add(2.0);
-        stack.add(3.0);
+        Stack stack = new Stack();
+        stack.push(2.0);
+        stack.push(3.0);
         popCommand.execute(null, stack, null);
-        Assertions.assertEquals(stack.get(stack.size() - 1), 2);
+        Assertions.assertEquals(stack.getLastElement(), 2);
     }
 
     @Test
@@ -22,23 +24,23 @@ public class CommandPopTest {
     {
         Pop popCommand = new Pop();
         Map<String, Double> map = new HashMap<>();
-        ArrayList<Double> stack = new ArrayList<>();
-        stack.add(2.0);
+        Stack stack = new Stack();
+        stack.push(2.0);
         popCommand.execute(new String[]{"POP"}, stack, map);
-        Assertions.assertEquals(stack.size(), 0);
+        Assertions.assertEquals(stack.getSize(), 0);
     }
 
     @Test
     void notEmptyMapTest()
     {
         Pop popCommand = new Pop();
-        ArrayList<Double> stack = new ArrayList<>();
-        stack.add(2.0);
-        stack.add(3.0);
-        stack.add(4.0);
+        Stack stack = new Stack();
+        stack.push(2.0);
+        stack.push(3.0);
+        stack.push(4.0);
         Map<String, Double> map = new HashMap<>();
         map.put("a", 4.0);
         popCommand.execute(new String[]{"POP"}, stack, map);
-        Assertions.assertEquals(stack.get(stack.size() - 1), 3);
+        Assertions.assertEquals(stack.getLastElement(), 3);
     }
 }

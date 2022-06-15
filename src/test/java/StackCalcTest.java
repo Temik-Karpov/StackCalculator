@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test;
+import ru.karpov.StackCalculator.StackCalc;
 
 public class StackCalcTest {
     @Test

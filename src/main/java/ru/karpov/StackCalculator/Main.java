@@ -1,3 +1,7 @@
+package ru.karpov.StackCalculator;
+
+import ru.karpov.StackCalculator.StackCalc;
+
 import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
@@ -11,14 +15,14 @@ public class Main {
     static {
         try {
             fh = new FileHandler("log.txt");
+            log.addHandler(fh);
+            log.setLevel(Level.ALL);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public static void main(String[] args) {
-        log.addHandler(fh);
-        log.setLevel(Level.ALL);
         log.info("Start program");
         StackCalc calc = new StackCalc();
         calc.start("input.txt");

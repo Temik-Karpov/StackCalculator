@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import ru.karpov.StackCalculator.Stack;
+import ru.karpov.StackCalculator.StackChangeOperations.Push;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,11 +12,11 @@ public class CommandPushTest {
     void nullMapTest()
     {
         Push pushCommand = new Push();
-        ArrayList<Double> stack = new ArrayList<>();
-        stack.add(2.0);
-        stack.add(3.0);
+        Stack stack = new Stack();
+        stack.push(2.0);
+        stack.push(3.0);
         pushCommand.execute(new String[]{"PUSH", "4"}, stack, null);
-        Assertions.assertEquals(stack.get(stack.size() - 1), 4);
+        Assertions.assertEquals(stack.getLastElement(), 4);
     }
 
     @Test
@@ -22,23 +24,23 @@ public class CommandPushTest {
     {
         Push pushCommand = new Push();
         Map<String, Double> map = new HashMap<>();
-        ArrayList<Double> stack = new ArrayList<>();
-        stack.add(2.0);
+        Stack stack = new Stack();
+        stack.push(2.0);
         pushCommand.execute(new String[]{"PUSH", "4"}, stack, map);
-        Assertions.assertEquals(stack.get(stack.size() - 1), 4);
+        Assertions.assertEquals(stack.getLastElement(), 4);
     }
 
     @Test
     void notEmptyMapTest()
     {
         Push pushCommand = new Push();
-        ArrayList<Double> stack = new ArrayList<>();
-        stack.add(2.0);
-        stack.add(3.0);
-        stack.add(4.0);
+        Stack stack = new Stack();
+        stack.push(2.0);
+        stack.push(3.0);
+        stack.push(4.0);
         Map<String, Double> map = new HashMap<>();
         map.put("a", 4.0);
         pushCommand.execute(new String[]{"PUSH", "a"}, stack, map);
-        Assertions.assertEquals(stack.get(stack.size() - 1), 4);
+        Assertions.assertEquals(stack.getLastElement(), 4);
     }
 }
