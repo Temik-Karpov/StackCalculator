@@ -58,7 +58,7 @@ public final class StackCalc {
     }
 
     public Command commandParser(String commandFirstWord) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        Command command = null;
+        Command command;
         AccessingAllClassesInPackage instance = new AccessingAllClassesInPackage();
         Set<Class<?>> classes = instance.findAllClassesUsingClassLoader(
                 "ru.karpov.StackCalculator.ArithmeticOperations");
