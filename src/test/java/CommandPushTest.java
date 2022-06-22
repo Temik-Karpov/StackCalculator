@@ -1,9 +1,8 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.karpov.StackCalculator.Stack;
-import ru.karpov.StackCalculator.StackChangeOperations.Push;
+import ru.karpov.StackCalculator.stackChangeOperations.Push;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,10 +1,12 @@
-package ru.karpov.StackCalculator.StackChangeOperations;
+package ru.karpov.StackCalculator.stackChangeOperations;
 
+import ru.karpov.StackCalculator.ClassNameAnnotation;
 import ru.karpov.StackCalculator.Command;
 import ru.karpov.StackCalculator.Stack;
 
 import java.util.Map;
 
+@ClassNameAnnotation(name = "PUSH")
 public final class Push implements Command {
 
     public void execute(final String[] commandString, final Stack stack, final Map<String, Double> params)

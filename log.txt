@@ -2,9 +2,9 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2022-06-15T12:19:10.409389300Z</date>
-  <millis>1655295550409</millis>
-  <nanos>389300</nanos>
+  <date>2022-06-21T08:08:23.539857300Z</date>
+  <millis>1655798903539</millis>
+  <nanos>857300</nanos>
   <sequence>0</sequence>
   <logger>global</logger>
   <level>INFO</level>
@@ -14,9 +14,9 @@
   <message>Start program</message>
 </record>
 <record>
-  <date>2022-06-15T12:19:10.468233400Z</date>
-  <millis>1655295550468</millis>
-  <nanos>233400</nanos>
+  <date>2022-06-21T08:08:23.599697600Z</date>
+  <millis>1655798903599</millis>
+  <nanos>697600</nanos>
   <sequence>1</sequence>
   <logger>global</logger>
   <level>INFO</level>
@@ -26,9 +26,9 @@
   <message>Check file name</message>
 </record>
 <record>
-  <date>2022-06-15T12:19:10.469231400Z</date>
-  <millis>1655295550469</millis>
-  <nanos>231400</nanos>
+  <date>2022-06-21T08:08:23.600695500Z</date>
+  <millis>1655798903600</millis>
+  <nanos>695500</nanos>
   <sequence>2</sequence>
   <logger>global</logger>
   <level>INFO</level>
@@ -38,9 +38,9 @@
   <message>Start read file</message>
 </record>
 <record>
-  <date>2022-06-15T12:19:10.478206200Z</date>
-  <millis>1655295550478</millis>
-  <nanos>206200</nanos>
+  <date>2022-06-21T08:08:23.602690300Z</date>
+  <millis>1655798903602</millis>
+  <nanos>690300</nanos>
   <sequence>3</sequence>
   <logger>global</logger>
   <level>INFO</level>
@@ -50,9 +50,9 @@
   <message>Parse command # hello</message>
 </record>
 <record>
-  <date>2022-06-15T12:19:10.480200600Z</date>
-  <millis>1655295550480</millis>
-  <nanos>200600</nanos>
+  <date>2022-06-21T08:08:23.652556600Z</date>
+  <millis>1655798903652</millis>
+  <nanos>556600</nanos>
   <sequence>4</sequence>
   <logger>global</logger>
   <level>INFO</level>
@@ -62,9 +62,9 @@
   <message>Parser is complete. Start execute</message>
 </record>
 <record>
-  <date>2022-06-15T12:19:10.481198Z</date>
-  <millis>1655295550481</millis>
-  <nanos>198000</nanos>
+  <date>2022-06-21T08:08:23.653553700Z</date>
+  <millis>1655798903653</millis>
+  <nanos>553700</nanos>
   <sequence>5</sequence>
   <logger>global</logger>
   <level>INFO</level>
@@ -74,9 +74,9 @@
   <message>Parse command PUSH 2</message>
 </record>
 <record>
-  <date>2022-06-15T12:19:10.482195500Z</date>
-  <millis>1655295550482</millis>
-  <nanos>195500</nanos>
+  <date>2022-06-21T08:08:23.655548500Z</date>
+  <millis>1655798903655</millis>
+  <nanos>548500</nanos>
   <sequence>6</sequence>
   <logger>global</logger>
   <level>INFO</level>
@@ -86,9 +86,9 @@
   <message>Parser is complete. Start execute</message>
 </record>
 <record>
-  <date>2022-06-15T12:19:10.483193300Z</date>
-  <millis>1655295550483</millis>
-  <nanos>193300</nanos>
+  <date>2022-06-21T08:08:23.657543300Z</date>
+  <millis>1655798903657</millis>
+  <nanos>543300</nanos>
   <sequence>7</sequence>
   <logger>global</logger>
   <level>INFO</level>
@@ -98,9 +98,9 @@
   <message>Parse command PRINT</message>
 </record>
 <record>
-  <date>2022-06-15T12:19:10.484190200Z</date>
-  <millis>1655295550484</millis>
-  <nanos>190200</nanos>
+  <date>2022-06-21T08:08:23.660534800Z</date>
+  <millis>1655798903660</millis>
+  <nanos>534800</nanos>
   <sequence>8</sequence>
   <logger>global</logger>
   <level>INFO</level>
@@ -110,9 +110,9 @@
   <message>Parser is complete. Start execute</message>
 </record>
 <record>
-  <date>2022-06-15T12:19:10.487181600Z</date>
-  <millis>1655295550487</millis>
-  <nanos>181600</nanos>
+  <date>2022-06-21T08:08:23.662530Z</date>
+  <millis>1655798903662</millis>
+  <nanos>530000</nanos>
   <sequence>9</sequence>
   <logger>global</logger>
   <level>INFO</level>

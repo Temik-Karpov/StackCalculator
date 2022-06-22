@@ -3,6 +3,7 @@ package ru.karpov.StackCalculator;
 import ru.karpov.StackCalculator.StackCalc;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Level;
@@ -22,7 +23,7 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
         log.info("Start program");
         StackCalc calc = new StackCalc();
         calc.start("input.txt");

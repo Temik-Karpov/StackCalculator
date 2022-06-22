@@ -1,5 +1,4 @@
 package ru.karpov.StackCalculator;
-
 import java.util.ArrayList;
 
 public final class Stack {

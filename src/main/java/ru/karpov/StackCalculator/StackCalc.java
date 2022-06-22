@@ -1,13 +1,7 @@
 package ru.karpov.StackCalculator;
 
-import ru.karpov.StackCalculator.ArithmeticOperations.*;
-import ru.karpov.StackCalculator.StackChangeOperations.Define;
-import ru.karpov.StackCalculator.StackChangeOperations.Pop;
-import ru.karpov.StackCalculator.StackChangeOperations.Push;
-import ru.karpov.StackCalculator.StackExtraOperations.Comment;
-import ru.karpov.StackCalculator.StackExtraOperations.Print;
-
 import java.io.*;
+import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,7 +11,7 @@ public final class StackCalc {
     private final Stack stack_ = new Stack();
     private final Map<String, Double> params_ = new HashMap<>();
 
-    public void fileParser(final FileReader fileReader) throws IOException {
+    public void fileParser(final FileReader fileReader) throws IOException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
         final BufferedReader reader = new BufferedReader(fileReader);
         String line = reader.readLine();
         while (line != null) {
@@ -28,8 +22,7 @@ public final class StackCalc {
         }
     }
 
-    public void start(final String fileName)
-    {
+    public void start(final String fileName) throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
         log.info("Check file name");
         if(fileName.length() != 0)
         {
@@ -43,8 +36,7 @@ public final class StackCalc {
         }
     }
 
-    public void consoleInput()
-    {
+    public void consoleInput() throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
         final Scanner scan = new Scanner(System.in);
         final String str = scan.nextLine();
         log.info("The command is accepted. Start parser");
@@ -59,30 +51,37 @@ public final class StackCalc {
             final FileReader fileReader = new FileReader(file);
             fileParser(fileReader);
             log.info("Start file parser");
-        } catch (IOException e) {
+        } catch (IOException | IllegalAccessException | InstantiationException | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
             log.log(Level.WARNING, "File problem", e);
         }
     }
 
-    public void executeCommand(String str)
-    {
+    public Command commandParser(String commandFirstWord) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         Command command = null;
-        final String[] words = str.split(" ");
-        final String comm = words[0];
-        switch (comm) {
-            case "DEFINE" -> command = new Define();
-            case "PUSH" -> command = new Push();
-            case "POP" -> command = new Pop();
-            case "PRINT" -> command = new Print();
-            case "+" -> command = new Plus();
-            case "-" -> command = new Minus();
-            case "*" -> command = new Multiplication();
-            case "/" -> command = new Division();
-            case "SQRT" -> command = new Sqrt();
-            case "#" -> command = new Comment();
-            default -> System.out.println("Incorrect command");
+        AccessingAllClassesInPackage instance = new AccessingAllClassesInPackage();
+        Set<Class<?>> classes = instance.findAllClassesUsingClassLoader(
+                "ru.karpov.StackCalculator.ArithmeticOperations");
+        classes.addAll(instance.findAllClassesUsingClassLoader(
+                "ru.karpov.StackCalculator.StackChangeOperations"));
+        classes.addAll(instance.findAllClassesUsingClassLoader(
+                "ru.karpov.StackCalculator.StackExtraOperations"));
+        for(Class<?> cl : classes)
+        {
+            ClassNameAnnotation annotation = cl.getAnnotation(ClassNameAnnotation.class);
+            if(commandFirstWord.equals(annotation.name()))
+            {
+                command = (Command) cl.getDeclaredConstructor().newInstance();
+                return command;
+            }
         }
+        return null;
+    }
+
+    public void executeCommand(String commandString) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        final String[] words = commandString.split(" ");
+        final String commandFirstWord = words[0];
+        Command command = commandParser(commandFirstWord);
         assert command != null;
         log.info("Parser is complete. Start execute");
         try {
@@ -91,7 +90,7 @@ public final class StackCalc {
         catch (NullPointerException e)
         {
             e.printStackTrace();
-            log.log(Level.WARNING, "ru.karpov.StackCalculator.Command execute problem", e);
+            log.log(Level.WARNING, "Command execute problem", e);
         }
     }
 }

@@ -1,10 +1,11 @@
 import org.junit.jupiter.api.Test;
 import ru.karpov.StackCalculator.StackCalc;
 
+import java.lang.reflect.InvocationTargetException;
+
 public class StackCalcTest {
     @Test
-    void stackCommandExecuteTest()
-    {
+    void stackCommandExecuteTest() throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
         StackCalc calc = new StackCalc();
         calc.executeCommand("DEFINE a 4");
         calc.executeCommand("PUSH a");
@@ -14,9 +15,10 @@ public class StackCalcTest {
         calc.executeCommand("# hello!");
     }
 
+
+
     @Test
-    void arithmeticCommandTest()
-    {
+    void arithmeticCommandTest() throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
         StackCalc calc = new StackCalc();
         calc.executeCommand("PUSH 4");
         calc.executeCommand("PUSH 5");
