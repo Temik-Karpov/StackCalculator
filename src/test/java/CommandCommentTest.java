@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.karpov.StackCalculator.Stack;
-import ru.karpov.StackCalculator.arithmeticOperations.Sqrt;
 import ru.karpov.StackCalculator.stackExtraOperations.Comment;
 
 import java.util.HashMap;

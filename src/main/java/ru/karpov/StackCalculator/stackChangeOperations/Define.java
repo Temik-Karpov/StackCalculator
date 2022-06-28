@@ -1,13 +1,13 @@
 package ru.karpov.StackCalculator.stackChangeOperations;
 
-import ru.karpov.StackCalculator.ClassNameAnnotation;
+import ru.karpov.StackCalculator.CommandDescription;
 import ru.karpov.StackCalculator.Command;
 import ru.karpov.StackCalculator.Stack;
 
 import java.util.Map;
 
-@ClassNameAnnotation(name = "DEFINE")
-public final class Define implements Command {
+@CommandDescription(commandSymbol = "DEFINE")
+public final class Define extends Command {
     @Override
     public void execute(final String[] commandString, final Stack stack, final Map<String, Double> params) {
         final int keyWordIndex = 1;

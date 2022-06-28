@@ -2,8 +2,14 @@ package ru.karpov.StackCalculator;
 
 public final class BinaryOperationArguments
 {
-    private double first_;
-    private double second_;
+    private final double first_;
+    private final double second_;
+
+    public BinaryOperationArguments(final double first_, final double second_)
+    {
+        this.first_ = first_;
+        this.second_ = second_;
+    }
 
     public double getFirst_() {
         return first_;
@@ -11,13 +17,5 @@ public final class BinaryOperationArguments
 
     public double getSecond_() {
         return second_;
-    }
-
-    public void setSecond_(double second_) {
-        this.second_ = second_;
-    }
-
-    public void setFirst_(double first_) {
-        this.first_ = first_;
     }
 }

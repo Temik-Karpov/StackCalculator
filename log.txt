@@ -20,7 +20,7 @@
   <sequence>1</sequence>
   <logger>global</logger>
   <level>INFO</level>
-  <class>ru.karpov.StackCalculator.StackCalc</class>
+  <class>ru.karpov.StackCalculator.StackCalculator</class>
   <method>start</method>
   <thread>1</thread>
   <message>Check file name</message>
@@ -32,7 +32,7 @@
   <sequence>2</sequence>
   <logger>global</logger>
   <level>INFO</level>
-  <class>ru.karpov.StackCalculator.StackCalc</class>
+  <class>ru.karpov.StackCalculator.StackCalculator</class>
   <method>start</method>
   <thread>1</thread>
   <message>Start read file</message>
@@ -44,7 +44,7 @@
   <sequence>3</sequence>
   <logger>global</logger>
   <level>INFO</level>
-  <class>ru.karpov.StackCalculator.StackCalc</class>
+  <class>ru.karpov.StackCalculator.StackCalculator</class>
   <method>fileParser</method>
   <thread>1</thread>
   <message>Parse command # hello</message>
@@ -56,7 +56,7 @@
   <sequence>4</sequence>
   <logger>global</logger>
   <level>INFO</level>
-  <class>ru.karpov.StackCalculator.StackCalc</class>
+  <class>ru.karpov.StackCalculator.StackCalculator</class>
   <method>executeCommand</method>
   <thread>1</thread>
   <message>Parser is complete. Start execute</message>
@@ -68,7 +68,7 @@
   <sequence>5</sequence>
   <logger>global</logger>
   <level>INFO</level>
-  <class>ru.karpov.StackCalculator.StackCalc</class>
+  <class>ru.karpov.StackCalculator.StackCalculator</class>
   <method>fileParser</method>
   <thread>1</thread>
   <message>Parse command PUSH 2</message>
@@ -80,7 +80,7 @@
   <sequence>6</sequence>
   <logger>global</logger>
   <level>INFO</level>
-  <class>ru.karpov.StackCalculator.StackCalc</class>
+  <class>ru.karpov.StackCalculator.StackCalculator</class>
   <method>executeCommand</method>
   <thread>1</thread>
   <message>Parser is complete. Start execute</message>
@@ -92,7 +92,7 @@
   <sequence>7</sequence>
   <logger>global</logger>
   <level>INFO</level>
-  <class>ru.karpov.StackCalculator.StackCalc</class>
+  <class>ru.karpov.StackCalculator.StackCalculator</class>
   <method>fileParser</method>
   <thread>1</thread>
   <message>Parse command PRINT</message>
@@ -104,7 +104,7 @@
   <sequence>8</sequence>
   <logger>global</logger>
   <level>INFO</level>
-  <class>ru.karpov.StackCalculator.StackCalc</class>
+  <class>ru.karpov.StackCalculator.StackCalculator</class>
   <method>executeCommand</method>
   <thread>1</thread>
   <message>Parser is complete. Start execute</message>
@@ -116,7 +116,7 @@
   <sequence>9</sequence>
   <logger>global</logger>
   <level>INFO</level>
-  <class>ru.karpov.StackCalculator.StackCalc</class>
+  <class>ru.karpov.StackCalculator.StackCalculator</class>
   <method>readFile</method>
   <thread>1</thread>
   <message>Start file parser</message>

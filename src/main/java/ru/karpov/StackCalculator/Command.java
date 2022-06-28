@@ -1,19 +1,17 @@
 package ru.karpov.StackCalculator;
 import java.util.Map;
 
-public interface Command {
-    void execute(final String[] commandString, final Stack stack, final Map<String, Double> parameters);
-    default BinaryOperationArguments extractBinaryOperationArguments(final Stack stack)
+public abstract class Command {
+    protected abstract void execute(final String[] commandString, final Stack stack, final Map<String, Double> parameters);
+    protected final BinaryOperationArguments extractBinaryOperationArguments(final Stack stack)
     {
         final int minStackSize = 2;
         assert !(stack.getSize() < minStackSize);
-        final BinaryOperationArguments binaryOperationArguments = new BinaryOperationArguments();
-        binaryOperationArguments.setFirst_(getOperationArgument(stack));
-        binaryOperationArguments.setSecond_(getOperationArgument(stack));
-        return binaryOperationArguments;
+        return new BinaryOperationArguments(
+                getOperationArgument(stack), getOperationArgument(stack));
     }
 
-    private double getOperationArgument(Stack stack)
+    private double getOperationArgument(final Stack stack)
     {
         final double operationArgument = stack.getLastElement();
         stack.pop();
