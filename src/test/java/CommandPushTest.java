@@ -6,7 +6,7 @@ import ru.karpov.StackCalculator.stackChangeOperations.Push;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CommandPushTest {
+public final class CommandPushTest {
     @Test
     void nullMapTest()
     {

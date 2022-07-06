@@ -11,7 +11,7 @@ public final class StackCalculator {
     private final Stack stack_ = new Stack();
     private final Map<String, Double> parameters_ = new HashMap<>();
 
-    public void parseFile(final FileReader fileReader) throws IOException, IllegalAccessException,
+    private void parseFile(final FileReader fileReader) throws IOException, IllegalAccessException,
             InstantiationException, NoSuchMethodException, InvocationTargetException {
         final BufferedReader reader = new BufferedReader(fileReader);
         try (reader) {
@@ -23,6 +23,10 @@ public final class StackCalculator {
                 line = reader.readLine();
             }
         }
+    }
+
+    public Stack getStack_() {
+        return stack_;
     }
 
     public void start(final String fileName) throws IllegalAccessException, InstantiationException,
@@ -86,7 +90,7 @@ public final class StackCalculator {
                 try {
                     command = (Command) cl.getDeclaredConstructor().newInstance();
                 }
-                catch(NullPointerException | TypeNotPresentException e)
+                catch(final NullPointerException | TypeNotPresentException e)
                 {
                     log.log(Level.WARNING, "Command is not found", e);
                 }
@@ -107,7 +111,7 @@ public final class StackCalculator {
         try {
             command.execute(words, this.stack_, this.parameters_);
         }
-        catch (NullPointerException e)
+        catch (final NullPointerException e)
         {
             e.printStackTrace();
             log.log(Level.WARNING, "Command execute problem", e);

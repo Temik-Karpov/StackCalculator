@@ -5,7 +5,7 @@ import ru.karpov.StackCalculator.ClassesFinderInPackage;
 import java.io.IOException;
 import java.util.Set;
 
-public class ClassesFinderInPackageTest {
+public final class ClassesFinderInPackageTest {
     @Test
     void twoClassesInPackageTest() throws IOException {
         final ClassesFinderInPackage classesFinderInPackage = new ClassesFinderInPackage();

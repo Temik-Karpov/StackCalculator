@@ -6,7 +6,7 @@ import ru.karpov.StackCalculator.stackChangeOperations.Pop;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CommandPopTest {
+public final class CommandPopTest {
     @Test
     void nullStringAndMapTest()
     {

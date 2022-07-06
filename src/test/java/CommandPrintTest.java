@@ -6,7 +6,7 @@ import ru.karpov.StackCalculator.stackExtraOperations.Print;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CommandPrintTest {
+public final class CommandPrintTest {
     @Test
     void nullStringAndMapTest()
     {

@@ -6,7 +6,7 @@ import ru.karpov.StackCalculator.Stack;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CommandMinusTest {
+public final class CommandMinusTest {
     @Test
     void nullStringAndMapTest()
     {

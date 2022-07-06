@@ -6,7 +6,7 @@ import ru.karpov.StackCalculator.stackChangeOperations.Define;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CommandDefineTest {
+public final class CommandDefineTest {
     @Test
     void EmptyMapTest()
     {

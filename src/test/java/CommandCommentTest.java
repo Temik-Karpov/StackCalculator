@@ -6,7 +6,7 @@ import ru.karpov.StackCalculator.stackExtraOperations.Comment;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CommandCommentTest {
+public final class CommandCommentTest {
     @Test
     void nullStringAndMapTest()
     {
