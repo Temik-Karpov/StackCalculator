@@ -8,7 +8,7 @@ import java.util.Map;
 
 @CommandDescription(commandSymbol = "POP")
 public final class Pop extends Command {
-    public void execute(final String[] commandString, final Stack stack, final Map<String, Double> params)
+    public void execute(final String[] commandString, final Stack stack, final Map<String, Double> parameters)
     {
         stack.pop();
     }

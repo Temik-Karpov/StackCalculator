@@ -8,6 +8,6 @@ import java.util.Map;
 
 @CommandDescription(commandSymbol = "#")
 public final class Comment extends Command {
-    public void execute(final String[] commandString, final Stack stack, final Map<String, Double> params)
+    public void execute(final String[] commandString, final Stack stack, final Map<String, Double> parameters)
     { }
 }

@@ -2,9 +2,9 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2022-06-21T08:08:23.539857300Z</date>
-  <millis>1655798903539</millis>
-  <nanos>857300</nanos>
+  <date>2022-06-30T14:23:11.505407800Z</date>
+  <millis>1656598991505</millis>
+  <nanos>407800</nanos>
   <sequence>0</sequence>
   <logger>global</logger>
   <level>INFO</level>
@@ -14,9 +14,9 @@
   <message>Start program</message>
 </record>
 <record>
-  <date>2022-06-21T08:08:23.599697600Z</date>
-  <millis>1655798903599</millis>
-  <nanos>697600</nanos>
+  <date>2022-06-30T14:23:11.558266700Z</date>
+  <millis>1656598991558</millis>
+  <nanos>266700</nanos>
   <sequence>1</sequence>
   <logger>global</logger>
   <level>INFO</level>
@@ -26,9 +26,9 @@
   <message>Check file name</message>
 </record>
 <record>
-  <date>2022-06-21T08:08:23.600695500Z</date>
-  <millis>1655798903600</millis>
-  <nanos>695500</nanos>
+  <date>2022-06-30T14:23:11.559263800Z</date>
+  <millis>1656598991559</millis>
+  <nanos>263800</nanos>
   <sequence>2</sequence>
   <logger>global</logger>
   <level>INFO</level>
@@ -38,21 +38,21 @@
   <message>Start read file</message>
 </record>
 <record>
-  <date>2022-06-21T08:08:23.602690300Z</date>
-  <millis>1655798903602</millis>
-  <nanos>690300</nanos>
+  <date>2022-06-30T14:23:11.561258500Z</date>
+  <millis>1656598991561</millis>
+  <nanos>258500</nanos>
   <sequence>3</sequence>
   <logger>global</logger>
   <level>INFO</level>
   <class>ru.karpov.StackCalculator.StackCalculator</class>
-  <method>fileParser</method>
+  <method>parseFile</method>
   <thread>1</thread>
   <message>Parse command # hello</message>
 </record>
 <record>
-  <date>2022-06-21T08:08:23.652556600Z</date>
-  <millis>1655798903652</millis>
-  <nanos>556600</nanos>
+  <date>2022-06-30T14:23:11.701759700Z</date>
+  <millis>1656598991701</millis>
+  <nanos>759700</nanos>
   <sequence>4</sequence>
   <logger>global</logger>
   <level>INFO</level>
@@ -62,21 +62,21 @@
   <message>Parser is complete. Start execute</message>
 </record>
 <record>
-  <date>2022-06-21T08:08:23.653553700Z</date>
-  <millis>1655798903653</millis>
-  <nanos>553700</nanos>
+  <date>2022-06-30T14:23:11.703754800Z</date>
+  <millis>1656598991703</millis>
+  <nanos>754800</nanos>
   <sequence>5</sequence>
   <logger>global</logger>
   <level>INFO</level>
   <class>ru.karpov.StackCalculator.StackCalculator</class>
-  <method>fileParser</method>
+  <method>parseFile</method>
   <thread>1</thread>
   <message>Parse command PUSH 2</message>
 </record>
 <record>
-  <date>2022-06-21T08:08:23.655548500Z</date>
-  <millis>1655798903655</millis>
-  <nanos>548500</nanos>
+  <date>2022-06-30T14:23:11.710736800Z</date>
+  <millis>1656598991710</millis>
+  <nanos>736800</nanos>
   <sequence>6</sequence>
   <logger>global</logger>
   <level>INFO</level>
@@ -86,21 +86,21 @@
   <message>Parser is complete. Start execute</message>
 </record>
 <record>
-  <date>2022-06-21T08:08:23.657543300Z</date>
-  <millis>1655798903657</millis>
-  <nanos>543300</nanos>
+  <date>2022-06-30T14:23:11.718715400Z</date>
+  <millis>1656598991718</millis>
+  <nanos>715400</nanos>
   <sequence>7</sequence>
   <logger>global</logger>
   <level>INFO</level>
   <class>ru.karpov.StackCalculator.StackCalculator</class>
-  <method>fileParser</method>
+  <method>parseFile</method>
   <thread>1</thread>
-  <message>Parse command PRINT</message>
+  <message>Parse command PUSH 3</message>
 </record>
 <record>
-  <date>2022-06-21T08:08:23.660534800Z</date>
-  <millis>1655798903660</millis>
-  <nanos>534800</nanos>
+  <date>2022-06-30T14:23:11.724698900Z</date>
+  <millis>1656598991724</millis>
+  <nanos>698900</nanos>
   <sequence>8</sequence>
   <logger>global</logger>
   <level>INFO</level>
@@ -110,10 +110,58 @@
   <message>Parser is complete. Start execute</message>
 </record>
 <record>
-  <date>2022-06-21T08:08:23.662530Z</date>
-  <millis>1655798903662</millis>
-  <nanos>530000</nanos>
+  <date>2022-06-30T14:23:11.726694Z</date>
+  <millis>1656598991726</millis>
+  <nanos>694000</nanos>
   <sequence>9</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>ru.karpov.StackCalculator.StackCalculator</class>
+  <method>parseFile</method>
+  <thread>1</thread>
+  <message>Parse command +</message>
+</record>
+<record>
+  <date>2022-06-30T14:23:11.730682800Z</date>
+  <millis>1656598991730</millis>
+  <nanos>682800</nanos>
+  <sequence>10</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>ru.karpov.StackCalculator.StackCalculator</class>
+  <method>executeCommand</method>
+  <thread>1</thread>
+  <message>Parser is complete. Start execute</message>
+</record>
+<record>
+  <date>2022-06-30T14:23:11.759605100Z</date>
+  <millis>1656598991759</millis>
+  <nanos>605100</nanos>
+  <sequence>11</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>ru.karpov.StackCalculator.StackCalculator</class>
+  <method>parseFile</method>
+  <thread>1</thread>
+  <message>Parse command PRINT</message>
+</record>
+<record>
+  <date>2022-06-30T14:23:11.780549400Z</date>
+  <millis>1656598991780</millis>
+  <nanos>549400</nanos>
+  <sequence>12</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>ru.karpov.StackCalculator.StackCalculator</class>
+  <method>executeCommand</method>
+  <thread>1</thread>
+  <message>Parser is complete. Start execute</message>
+</record>
+<record>
+  <date>2022-06-30T14:23:11.784538300Z</date>
+  <millis>1656598991784</millis>
+  <nanos>538300</nanos>
+  <sequence>13</sequence>
   <logger>global</logger>
   <level>INFO</level>
   <class>ru.karpov.StackCalculator.StackCalculator</class>

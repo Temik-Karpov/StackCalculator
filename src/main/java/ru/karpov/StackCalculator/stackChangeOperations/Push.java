@@ -9,7 +9,7 @@ import java.util.Map;
 @CommandDescription(commandSymbol = "PUSH")
 public final class Push extends Command {
 
-    public void execute(final String[] commandString, final Stack stack, final Map<String, Double> params)
+    public void execute(final String[] commandString, final Stack stack, final Map<String, Double> parameters)
     {
         final int valueWordIndex = 1;
         if(isNumeric(commandString[valueWordIndex]))
@@ -17,7 +17,7 @@ public final class Push extends Command {
             stack.push(Double.parseDouble(commandString[valueWordIndex]));
         }
         else {
-            stack.push(params.get(commandString[valueWordIndex]));
+            stack.push(parameters.get(commandString[valueWordIndex]));
         }
     }
 

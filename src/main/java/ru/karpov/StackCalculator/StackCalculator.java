@@ -64,14 +64,13 @@ public final class StackCalculator {
             }
             log.info("Start file parser");
         } catch (final IOException | IllegalAccessException | InstantiationException | NoSuchMethodException | InvocationTargetException e) {
-            e.printStackTrace();    //TODO: информативности побольше
             log.log(Level.WARNING, "File problem", e);
         }
     }
 
     private Command commandParser(final String commandFirstWord) throws NoSuchMethodException, IllegalAccessException,
             InvocationTargetException, InstantiationException, IOException {
-        final Command command;
+        Command command = null;
         final ClassesFinderInPackage instance = new ClassesFinderInPackage();
         final Set<Class<?>> classes = instance.findAllClassesUsingClassLoader(
                 "ru.karpov.StackCalculator.arithmeticOperations");
@@ -84,7 +83,13 @@ public final class StackCalculator {
             final CommandDescription annotation = cl.getAnnotation(CommandDescription.class);
             if(commandFirstWord.equals(annotation.commandSymbol()))
             {
-                command = (Command) cl.getDeclaredConstructor().newInstance();  //TODO: обработка ошибки
+                try {
+                    command = (Command) cl.getDeclaredConstructor().newInstance();
+                }
+                catch(NullPointerException | TypeNotPresentException e)
+                {
+                    log.log(Level.WARNING, "Command is not found", e);
+                }
                 return command;
             }
         }

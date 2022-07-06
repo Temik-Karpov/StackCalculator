@@ -9,9 +9,9 @@ import java.util.Map;
 @CommandDescription(commandSymbol = "DEFINE")
 public final class Define extends Command {
     @Override
-    public void execute(final String[] commandString, final Stack stack, final Map<String, Double> params) {
+    public void execute(final String[] commandString, final Stack stack, final Map<String, Double> parameters) {
         final int keyWordIndex = 1;
         final int valueWordIndex = 2;
-        params.put(commandString[keyWordIndex], Double.parseDouble(commandString[valueWordIndex]));
+        parameters.put(commandString[keyWordIndex], Double.parseDouble(commandString[valueWordIndex]));
     }
 }

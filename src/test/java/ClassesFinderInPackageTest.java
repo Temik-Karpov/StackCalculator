@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.karpov.StackCalculator.ClassesFinderInPackage;
-import ru.karpov.StackCalculator.stackExtraOperations.Comment;
 
 import java.io.IOException;
 import java.util.Set;

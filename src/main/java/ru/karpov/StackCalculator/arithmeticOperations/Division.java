@@ -9,7 +9,7 @@ import java.util.Map;
 
 @CommandDescription(commandSymbol = "/")
 public final class Division extends Command {
-    public void execute(final String[] commandString, final Stack stack, final Map<String, Double> params)
+    public void execute(final String[] commandString, final Stack stack, final Map<String, Double> parameters)
     {
         BinaryOperationArguments binaryOperationArguments = extractBinaryOperationArguments(stack);
         assert binaryOperationArguments.getSecond_() != 0;
